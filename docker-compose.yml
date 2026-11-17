@@ -1,0 +1,48 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: news_analyser_mongo
+    ports:
+      # 27018 on host avoids clash with a local Mongo on 27017
+      - "27018:27017"
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+  api:
+    build: .
+    container_name: news_analyser_api
+    ports:
+      - "8000:8000"
+    environment:
+      MONGO_URI: mongodb://mongo:27017
+      MONGO_DB: news_analyser
+      API_HOST: 0.0.0.0
+      API_PORT: 8000
+      TOXICITY_MODEL_NAME: textdetox/xlmr-base-toxicity-classifier
+      TOXICITY_MAX_LENGTH: "512"
+      TOXICITY_TOXIC_THRESHOLD: "0.5"
+      TOXICITY_HIGHLY_THRESHOLD: "0.8"
+      HF_HOME: /app/.cache/huggingface
+      TRANSFORMERS_CACHE: /app/.cache/huggingface
+    volumes:
+      - hf_cache:/app/.cache/huggingface
+    depends_on:
+      mongo:
+        condition: service_healthy
+    # First boot downloads the HF model (~1GB) — allow a long start window
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 20
+      start_period: 600s
+
+volumes:
+  mongo_data:
+  hf_cache:

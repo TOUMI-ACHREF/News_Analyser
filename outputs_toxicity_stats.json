@@ -1,0 +1,66 @@
+[
+  {
+    "source": "france24",
+    "total_count": 30,
+    "lightly_toxic_count": 0,
+    "highly_toxic_count": 0,
+    "lightly_toxic_pct": 0.0,
+    "highly_toxic_pct": 0.0
+  },
+  {
+    "source": "france3",
+    "total_count": 30,
+    "lightly_toxic_count": 0,
+    "highly_toxic_count": 0,
+    "lightly_toxic_pct": 0.0,
+    "highly_toxic_pct": 0.0
+  },
+  {
+    "source": "gamespot",
+    "total_count": 30,
+    "lightly_toxic_count": 0,
+    "highly_toxic_count": 0,
+    "lightly_toxic_pct": 0.0,
+    "highly_toxic_pct": 0.0
+  },
+  {
+    "source": "humanite",
+    "total_count": 30,
+    "lightly_toxic_count": 0,
+    "highly_toxic_count": 0,
+    "lightly_toxic_pct": 0.0,
+    "highly_toxic_pct": 0.0
+  },
+  {
+    "source": "lemonde",
+    "total_count": 30,
+    "lightly_toxic_count": 0,
+    "highly_toxic_count": 0,
+    "lightly_toxic_pct": 0.0,
+    "highly_toxic_pct": 0.0
+  },
+  {
+    "source": "lepoint",
+    "total_count": 30,
+    "lightly_toxic_count": 0,
+    "highly_toxic_count": 0,
+    "lightly_toxic_pct": 0.0,
+    "highly_toxic_pct": 0.0
+  },
+  {
+    "source": "marianne",
+    "total_count": 30,
+    "lightly_toxic_count": 0,
+    "highly_toxic_count": 0,
+    "lightly_toxic_pct": 0.0,
+    "highly_toxic_pct": 0.0
+  },
+  {
+    "source": "mediacites",
+    "total_count": 10,
+    "lightly_toxic_count": 0,
+    "highly_toxic_count": 0,
+    "lightly_toxic_pct": 0.0,
+    "highly_toxic_pct": 0.0
+  }
+]

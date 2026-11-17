@@ -1,0 +1,39 @@
+# Environment / secrets
+.env
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Local outputs
+outputs/
+*.log
+data/
+models/*.pkl
+!models/.gitkeep
